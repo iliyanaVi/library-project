@@ -1,0 +1,9 @@
+.login-w {
+    width: "50%";
+    display: flex;
+    justify-content: flex-end,
+}
+
+#login input {
+    margin-right: 5px;
+}
