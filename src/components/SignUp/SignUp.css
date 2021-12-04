@@ -1,0 +1,14 @@
+.signUpWrapper{
+    height: 800px;
+}
+#signUp{
+    background-color: antiquewhite;
+    width: 60%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+#signUp .form-group{
+    margin-top: 1rem;
+    width: 70%;
+    margin: 0 auto;
+}

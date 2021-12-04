@@ -1,9 +1,34 @@
-.login-w {
-    width: "50%";
-    display: flex;
-    justify-content: flex-end,
+.header{
+  background-color: #403A34;
+  /* #312F40; */
 }
-
-#login input {
-    margin-right: 5px;
+.header-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login-w {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.logo {
+  color: #CEB29F;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  font-style: italic;
+}
+.nav-wrapper{
+  width: 50%;
+}
+.navigation{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-link{
+  margin-right:20px
 }

@@ -5,14 +5,16 @@
 }
 
 .wrapper {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 }
-
-.widh-50-pc {
-    width: 50%;
+.wrapper-70 {
+    width: 70%;
+    margin: 0 auto;
 }
-
 .flex {
     display: flex;
+}
+.link{
+    text-decoration: none;
 }

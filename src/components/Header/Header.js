@@ -1,24 +1,39 @@
+import { Link } from "react-router-dom";
+import { useLogout } from "../../hooks/useLogout";
+import { useAuthContext } from "../../hooks/useAuthContext";
+
 import "./header.css";
 import "../../utils.css";
 
 function Header() {
-    return (
-        <header>
-            <div className="wrapper flex">
-                <div className="widh-50-pc" id="logo">
-                    <span>Totally Awesome Library</span>
-                </div>
-                <div className="widh-50-pc d-flex justify-content-end">
-                    <form id="login" action="" method="post">
-                        <input type="email" name="" id="" />
-                        <input type="password" name="" id="" />
-                    </form>
-                    <div>
-                        <p>Not a member? Sign up!</p>
-                    </div>
-                </div>
-            </div>
-        </header>
-    )
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
+
+  return (
+    <header className="header">
+      <div className="header-wrapper">
+        <div className="widh-50-pc" id="logo">
+          <Link style={{ textDecoration: "none", color: "black" }} to="/">
+            <span className="logo">Totally Awesome Library</span>
+          </Link>
+        </div>
+        {user && (
+          <div className="nav-wrapper">
+            <nav className="navigation">
+              <Link className="nav-link" to="#">
+                Books I want to read
+              </Link>
+              <Link className="nav-link" to="#">
+                My profile
+              </Link>
+              <button className="btn btn-primary" onClick={logout}>
+                Logout
+              </button>
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  );
 }
 export default Header;
