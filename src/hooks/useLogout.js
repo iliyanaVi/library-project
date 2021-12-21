@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { projectAuth } from "../Firebase/config";
 import { useAuthContext } from "./useAuthContext";
+import { Navigate } from "react-router-dom";
 
 export const useLogout = () => {
   const [isCancelled, setIsCancelled] = useState(false);
@@ -30,6 +31,7 @@ export const useLogout = () => {
       setError(err.message);
       }
     }
+    <Navigate to="/" />
   };
   useEffect(() => {
     return () => setIsCancelled(true);

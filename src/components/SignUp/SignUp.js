@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useSignUp } from "../../hooks/useSignUp";
 
-import "./SignUp.css";
+import styles from "./SignUp.module.css";
+import { Form, Button } from "react-bootstrap";
+
 
 function SignUp(params) {
   const [displayName,setDisplayName] = useState("");
@@ -15,52 +17,65 @@ function SignUp(params) {
   }
 
   return (
-    <div className="signUpWrapper wrapper-70">
-      <form onSubmit={handleSubmit} id="signUp">
-      <div className="form-group">
-          <label style={{marginBottom:"2rem"}}>
-            <span>Name</span>
-            <input
+    <div className={`${styles.signUpWrapper} wrapper-70`}>
+      <Form
+        className={styles.signUp}
+        onSubmit={handleSubmit}
+      >
+        <div className="mt-4 wrapper-70">
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
               type="text"
               className="form-control"
               placeholder="Enter your name"
               onChange={(e) => setDisplayName(e.target.value)}
               value={displayName}
             />
-          </label>
-        </div>
-        <div className="form-group">
-          <label style={{marginBottom:"2rem"}}>
-            <span>Email address</span>
-            <input
+          </Form.Group>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
               type="email"
               className="form-control"
               placeholder="Enter email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
-          </label>
-        </div>
-        <div className="form-group">
-          <label  style={{marginBottom:"2rem"}}>
-            <span>Password</span>
-            <input
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
               type="password"
               className="form-control"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
-          </label>
+          </Form.Group>
         </div>
-        <div className="wrapper-70">
-        {!isPending && <button className="btn btn-primary">
-          Submit
-        </button>}
-        {isPending && <button className="btn btn-primary" disabled>loading</button>}
-        {error && <p>{error}</p>}
+        <div className="mt-4 wrapper-70">
+          {!isPending && !error &&(
+            <Button variant="primary" type="submit">
+              Login
+            </Button>
+          )}
+          {isPending && (
+            <Button variant="primary" type="submit" disabled>
+              Loading
+            </Button>
+          )}
+
+          {error && (
+            <>
+              <Button variant="primary" type="submit">
+                Login
+              </Button>
+              <p className={styles.error}>{error}</p>
+            </>
+          )}
         </div>
-      </form>
+      </Form>
     </div>
   );
 }

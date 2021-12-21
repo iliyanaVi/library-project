@@ -2,7 +2,7 @@
   background-color: #403A34;
   /* #312F40; */
 }
-.header-wrapper {
+.headerWrapper {
   width: 80%;
   margin: 0 auto;
   height: 75px;
@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.login-w {
+.loginW {
   width: 50%;
   display: flex;
   justify-content: flex-end;
@@ -21,14 +21,15 @@
   font-weight: bolder;
   font-style: italic;
 }
-.nav-wrapper{
+.navWrapper{
   width: 50%;
 }
 .navigation{
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
-.nav-link{
+.navLink{
   margin-right:20px
 }

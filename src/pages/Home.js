@@ -6,98 +6,7 @@ function Home() {
   const [books, setBooks] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(false);
-  const result1 = [
-    {
-      'authors': ["j.k sdfgsd"],
-      'description': "some description",
-      'id': "3",
-      'imageLinks': {
-        'smallThumbnail': "https://picsum.photos/200/300",
-        'thumbnail': "https://picsum.photos/200/300",
-      },
-      'title': "some title",
-    },
-    {
-      'authors': ["j.k sdfgsd"],
-      'description': "some description",
-      'id': "4",
-      'imageLinks': {
-        'smallThumbnail': "https://picsum.photos/200/300",
-        'thumbnail': "https://picsum.photos/200/300",
-      },
-      'title': "some title",
-    },
-    {
-      'authors': ["j.k sdfgsd"],
-      'description': "some description",
-      'id': "5",
-      'imageLinks': {
-        'smallThumbnail': "https://picsum.photos/200/300",
-        'thumbnail': "https://picsum.photos/200/300",
-      },
-      'title': "some title",
-    },
-    {
-      'authors': ["j.k sdfgsd"],
-      'description': "some description",
-      'id': "6",
-      'imageLinks': {
-        'smallThumbnail': "https://picsum.photos/200/300",
-        'thumbnail': "https://picsum.photos/200/300",
-      },
-      'title': "some title",
-    },
-    {
-      'authors': ["j.k sdfgsd"],
-      'description': "some description",
-      'id': "7",
-      'imageLinks': {
-        'smallThumbnail': "https://picsum.photos/200/300",
-        'thumbnail': "https://picsum.photos/200/300",
-      },
-      'title': "some title",
-    },
-    {
-      'authors': ["j.k sdfgsd"],
-      'description': "some description",
-      'id': "8",
-      'imageLinks': {
-        'smallThumbnail': "https://picsum.photos/200/300",
-        'thumbnail': "https://picsum.photos/200/300",
-      },
-      'title': "some title",
-    },
-    {
-      'authors': ["j.k sdfgsd"],
-      'description': "some description",
-      'id': "9",
-      'imageLinks': {
-        'smallThumbnail': "https://picsum.photos/200/300",
-        'thumbnail': "https://picsum.photos/200/300",
-      },
-      'title': "some title",
-    },
-    {
-      'authors': ["j.k sdfgsd"],
-      'description': "some description",
-      'id': "10",
-      'imageLinks': {
-        'smallThumbnail': "https://picsum.photos/200/300",
-        'thumbnail': "https://picsum.photos/200/300",
-      },
-      'title': "some title",
-    },
-    {
-      'authors': ["j.k sdfgsd"],
-      'description': "some description",
-      'id': "11",
-      'imageLinks': {
-        'smallThumbnail': "https://picsum.photos/200/300",
-        'thumbnail': "https://picsum.photos/200/300",
-      },
-      'title': "some title",
-    },
-  ];
+  
   useEffect(() => {
     setIsPending(true);
 
@@ -128,11 +37,11 @@ function Home() {
     return () => unsubscribe();
   }, []);
   return (
-    <div className="home">
+    <>
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">Loading...</p>}
       {books && <Booklist books={books} />}
-    </div>
+    </>
   );
 }
 export default Home;

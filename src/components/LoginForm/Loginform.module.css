@@ -1,7 +1,6 @@
 .login {
-  width: 30%;
 }
-.login-form {
+.loginForm {
   width: 25rem;
   height: 30rem;
   border: 5px solid #403A34;
@@ -9,21 +8,18 @@
   background-color: #CEB29F;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
 }
-.login-text{
+.loginText{
   color:#403A34;
   text-align: center;
   margin-top: 45px;
 }
-.login-form input{
-    width: 70%;
-    margin: 0 auto;
-}
-#email, #password{
-    height: 40px;
-}
-.text-signup{
+
+.textSignup{
   margin-top: 10px;
   color:#403A34;
   font-style: italic;
   text-decoration: none;
+}
+.error{
+  color: red;
 }

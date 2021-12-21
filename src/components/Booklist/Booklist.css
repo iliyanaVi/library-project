@@ -1,9 +1,0 @@
-.book-list {
-  background-color: #51B1A8;
-}
-.grid-wrapper{
-  display: grid;
-  grid-gap: 50px 100px;
-  grid-template-columns: auto auto auto auto;
-  padding: 10px;
-}

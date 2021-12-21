@@ -1,29 +1,3 @@
-.main.main-card {
-  background-color: white;
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  top: 7%;
-  left: 5%;
-  z-index: 3;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
-
-}
-.main-card h5 {
-  position: relative;
-  top: 27%;
-}
-.main-card h3 {
-  position: relative;
-  top: 25%;
-}
-.color-block {
-  height: 100%;
-  width: 475px;
-  background-color: #1F67AE;
-  position: absolute;
-  left: 15.5%;
-}
 .main-container {
   display: flex;
   width: 100%;

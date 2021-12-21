@@ -1,29 +1,38 @@
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
-import "./Book.css";
+import styles from "./Book.module.css";
+import { Card,Button } from "react-bootstrap";
 
 function Book({ id, img, title, description }) {
+  const { user } = useAuthContext();
+
   const addBook = (id) => {
+    console.log(user.uid);
     console.log(id);
     //подава се към базата данни и така се пазят любимите книги за дадения юзър
   };
-
+  console.log(user);
   return (
-    <div className="book-card card margin-card">
-      <img src={img} className="card-img-top" alt="..." />
-      <div className="book-body card-body">
-        <h5 className="card-title">
+    <Card style={{width:"100%",height:"100%"}}>
+      <Card.Img style={{height:"65%"}}variant="top" src={img} />
+      <Card.Body>
+        <Card.Title>
           {title.length > 40 ? title.slice(0, 40) + "..." : title}
-        </h5>
-        <p className="d-inline-block text-truncate card-text">{description}</p>
-      </div>
-      <div className='btn-wrapper'>
-        <button className="btn-add" onClick={() => addBook(id)}>
+        </Card.Title>
+        <Card.Text>{description.length > 40 ? description.slice(0, 40) + "..." : description}</Card.Text>
+        <div className={styles.btnWrapper}>
+        {user && <Button className="btn-add" onClick={() => addBook(id)}>
           +
-        </button>
-        <Link className="link" to={`/bookDetails/${id}`}>More...</Link>
-      </div>
-    </div>
+        </Button>}
+        <Button variant="primary">
+          <Link className={styles.link} to={`/bookDetails/${id}`}>
+            More...
+          </Link>
+        </Button>
+        </div>
+      </Card.Body>
+    </Card>
   );
 }
 
