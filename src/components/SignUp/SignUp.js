@@ -4,24 +4,20 @@ import { useSignUp } from "../../hooks/useSignUp";
 import styles from "./SignUp.module.css";
 import { Form, Button } from "react-bootstrap";
 
-
 function SignUp(params) {
-  const [displayName,setDisplayName] = useState("");
-  const [email,setEmail] = useState("");
-  const [password,setPassword] = useState("");
-  const {signup,isPending,error} = useSignUp();
+  const [displayName, setDisplayName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signup, isPending, error } = useSignUp();
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    signup(email,password,displayName)
-  }
+    signup(email, password, displayName);
+  };
 
   return (
     <div className={`${styles.signUpWrapper} wrapper-70`}>
-      <Form
-        className={styles.signUp}
-        onSubmit={handleSubmit}
-      >
+      <Form className={styles.signUp} onSubmit={handleSubmit}>
         <div className="mt-4 wrapper-70">
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Name</Form.Label>
@@ -55,7 +51,7 @@ function SignUp(params) {
           </Form.Group>
         </div>
         <div className="mt-4 wrapper-70">
-          {!isPending && !error &&(
+          {!isPending && !error && (
             <Button variant="primary" type="submit">
               Login
             </Button>

@@ -21,7 +21,7 @@ function Header() {
         {user && (
           <div className={styles.navWrapper}>
             <nav className={styles.navigation}>
-              <Link className={styles.navLink} to="#">
+              <Link className={styles.navLink} to="myBooksList">
                 Books I want to read
               </Link>
               <Link className={styles.navLink} to="#">
